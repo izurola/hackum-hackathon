@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="topnav-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const topnavPlaceholder = document.getElementById("topnav-placeholder");
+            fetch("topnav.html")
+                .then(response => response.text())
+                .then(html => {
+                    topnavPlaceholder.innerHTML = html;
+                });
+        });
+    </script>
+  <div class="post">
+    <div class="post-header">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+      <div class="post-info">
+        <h2>John Doe</h2>
+        <span class="post-time">Posted on March 1, 2022</span>
+      </div>
+    </div>
+    <div class="post-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida, quam sed posuere accumsan, nisi est laoreet justo, in consequat turpis ligula at est.</p>
+    </div>
+    <div class="post-footer">
+      <div class="actions">
+        <button>Like</button>
+        <button>Comment</button>
+        <button>Share</button>
+      </div>
+    </div>
+  </div>
+  <button id="contact-author-button">Contact Author</button>
+  <script src="script.js"></script>
+</body>
+</html>

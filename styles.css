@@ -86,4 +86,80 @@ body {
     background-color: #0b7dda; /* Darker blue background color on hover */
   }
 
+  /* Add your custom styles for the feed and posts */
+.feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .post {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .post:hover {
+    background-color: #f9f9f9;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .post p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  .post-footer button {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .post-footer button:hover {
+    text-decoration: underline;
+  }
+  
+  .post-footer .actions {
+    display: flex;
+  }
+  
+  .post-footer .actions button {
+    margin-right: 10px;
+  }
+  
+  .post-footer .actions button:last-child {
+    margin-right: 0;
+  }
   
