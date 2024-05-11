@@ -1,13 +1,21 @@
 <?php
-include 'db.php';
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "hackathon";
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $result = $db->query('SELECT posts.id, posts.author_id, posts.content, posts.created_at, authors.name AS author FROM posts JOIN authors ON posts.author_id = authors.id');
-    $posts = [];
-    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM posts";
+$result = $conn->query($sql);
+$posts = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
         $posts[] = $row;
     }
-    echo json_encode($posts);
 }
-
+$conn->close();
+echo json_encode($posts);
 ?>
