@@ -26,14 +26,14 @@ body {
     color: black;
     text-decoration: none;
     font-size: 20px;
-    padding: 5px 10px; /* Adjust padding */
+    padding: 5px 20px; /* Adjust padding */
   }
   
   .topnav .search-container {
     flex: 1; /* Use flex to make the search container take up remaining space */
     display: flex;
     padding: 0; /* Remove padding */
-    margin-left: 300px;
+    margin-left: 200px;
   }
   
   
@@ -68,7 +68,7 @@ body {
 }
 .icons button{
     margin-left: 30px;
-  padding: 8px 16px;
+  padding: 8px 30px;
   background-color: #2196F3; /* Blue background color */
   color: white;
   border: none;
