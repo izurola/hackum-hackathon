@@ -1,58 +1,89 @@
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-nav {
-    background-color: #444;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
+  }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+  
+  .website-name {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px 75px 8px 55px; /* Change margin to 8px on top, right, and bottom, 0 on left */
+  }
+  
+  
+  .topnav a {
+    color: black;
     text-decoration: none;
-    margin: 0 10px;
+    font-size: 20px;
+    padding: 5px 10px; /* Adjust padding */
+  }
+  
+  .topnav .search-container {
+    flex: 1; /* Use flex to make the search container take up remaining space */
+    display: flex;
+    padding: 0; /* Remove padding */
+    margin-left: 300px;
+  }
+  
+  
+  .topnav input[type=text] {
+    margin: 0 auto; /* Center the search bar horizontally */
+    width: 300px; /* Adjust the width as needed */
+    height: 30px;
+  }
+  
+  .topnav .search-container button {
+    padding: 6px 10px;
 }
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  
+  @media screen and (max-width: 600px) {
+    .topnav .search-container button,
+    .topnav a,
+    .topnav input[type=text] {
+      padding: 8px; /* Adjust padding for small screens */
+    }
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+  }
+  
+  .icons a {
+  margin-left: 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 25px; /* Adjust the font size of the icons */
 }
-main {
-    padding: 20px;
+.icons button{
+    margin-left: 30px;
+  padding: 8px 16px;
+  background-color: #2196F3; /* Blue background color */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius for a smoother appearance */
+  font-size: 15px;
+  cursor: pointer;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-.profile {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+.icons a:hover{
+  background-color: #ddd;
+  color: black;
 }
 
-.profile h2 {
-    margin-top: 0;
-}
+.icons button:hover {
+    background-color: #0b7dda; /* Darker blue background color on hover */
+  }
 
-.profile p {
-    margin-bottom: 5px;
-}
+  

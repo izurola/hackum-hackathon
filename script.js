@@ -16,4 +16,11 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
       resultsDiv.appendChild(resultElement);
     });
   }
+  document.getElementById('searchButton').addEventListener('click', function() {
+    let searchTerm = document.getElementById('searchInput').value;
+    // Perform search with searchTerm
+    console.log('Searching for:', searchTerm);
+    // Add your search logic here
+});
+
   

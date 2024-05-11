@@ -6,36 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RP NUM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Your Website</h1>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
+    <div class="topnav">
+        <span class="website-name">RP-NUM</span>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="icons">
+            <a href="#notification"><i class="fa fa-bell"></i></a>
+            <a href="#message"><i class="fa fa-envelope"></i></a>
+            <a href="#profile"><i class="fa fa-user"></i></a>
+            <button>Add</button>
+          </div>
+    </div>
 
     <main>
-        <h2>Welcome to Your Website</h2>
-        <p>This is a paragraph of text on your homepage. You can add more content here.</p>
-        <form id="searchForm">
-            <input type="text" id="keyword" placeholder="Search by keyword or username">
-            <button type="submit">Search</button>
-        </form>
-        <div id="searchResults"></div>
 
     </main>
 
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>
