@@ -1,6 +1,22 @@
-function viewPost(postId) {
-  window.location.href = `post.html?id=${postId}`;
+// function viewPost(postId) {
+//   window.location.href = `post.html?id=${postId}`;
+// }
+function viewPost(postId, authorName, postContent, postDate) {
+  // Assuming postId is used to fetch post data from the API
+  fetch(`api.php?postId=${postId}`)
+      .then(response => response.json())
+      .then(post => {
+        // var authorElement = document.getElementById("post-author-name");
+        // authorElement.innerText = "authorName";
+    
+        // var dateElement = document.getElementById("post-date");
+        // dateElement.textContent = postDate; 
+    
+        // var contentElement = document.getElementById("post-content");
+        // contentElement.innerHTML = postContent;
+      });
 }
+
 function displayPost(postId) {
   const postContent = document.getElementById("post-content");
   fetch(`${postId}.html`)
@@ -56,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const postElement = document.createElement("div");
         postElement.classList.add("post");
         postElement.addEventListener("click", function () {
-          viewPost(post.id);
+          viewPost(post.id, post.author_username, post.content, post.postDate);
         });
         postElement.innerHTML = `
           <h3>${post.title}</h3>

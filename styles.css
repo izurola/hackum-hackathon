@@ -25,7 +25,7 @@ body {
   .topnav a {
     color: black;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px 20px; /* Adjust padding */
   }
   
@@ -63,14 +63,13 @@ body {
   .icons a {
   margin-left: 10px;
   color: black;
-  text-decoration: none;
   font-size: 25px; /* Adjust the font size of the icons */
 }
 .icons button{
     margin-left: 30px;
   padding: 8px 30px;
-  background-color: #2196F3; /* Blue background color */
-  color: white;
+  background-color: #9a9c9e; /* Blue background color */
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 20px; /* Adjust the border-radius for a smoother appearance */
   font-size: 15px;
@@ -83,7 +82,7 @@ body {
 }
 
 .icons button:hover {
-    background-color: #0b7dda; /* Darker blue background color on hover */
+    background-color: #696b6c; /* Darker blue background color on hover */
   }
 
   /* Add your custom styles for the feed and posts */
@@ -94,7 +93,7 @@ body {
   }
   
   .post {
-    width: 80%;
+    width: 50%;
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
@@ -176,4 +175,27 @@ body {
     margin-right: 10px; /* Add some margin to the right of the profile picture */
 }
 
-  
+.profile {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.profile-picture1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.full-name {
+  margin: 10px 0;
+}
+
+.info {
+  margin-bottom: 20px;
+}

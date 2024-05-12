@@ -8,7 +8,7 @@
   <title>RP NUM</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
   <?php
   $servername = "localhost";
