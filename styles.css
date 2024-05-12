@@ -177,7 +177,7 @@ body {
 }
 
 .profile {
-  max-width: 600px;
+  max-width: 1000px; /* Increased from 1500px */
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -185,6 +185,7 @@ body {
   background-color: #f9f9f9;
   text-align: center;
 }
+
 
 .profile-picture1 {
   width: 150px;
@@ -199,4 +200,13 @@ body {
 
 .info {
   margin-bottom: 20px;
+}
+
+.profile-info
+{
+  
+}
+.small-details p {
+  display: inline-block;
+  margin: 0 10px;
 }

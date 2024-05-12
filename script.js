@@ -76,13 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         postElement.innerHTML = `
           <h3>${post.title}</h3>
-          <p>${post.content}</p>
+          <p>${post.content.length > 500 ? post.content.substring(0, 500) + "... <a href='#' onclick='extendContent(event)'>Read more</a>" : post.content}</p>
           <span>Author: ${post.author_username}</span>
         `;
         feed.appendChild(postElement);
       });
     });
 });
-
-
+function addPage()
+{
+  window.location.href = "addPage.html";
+}
 
