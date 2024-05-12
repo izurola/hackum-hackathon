@@ -3,18 +3,23 @@
 // }
 function viewPost(postId, authorName, postContent, postDate) {
   // Assuming postId is used to fetch post data from the API
-  fetch(`api.php?postId=${postId}`)
-      .then(response => response.json())
-      .then(post => {
-        // var authorElement = document.getElementById("post-author-name");
-        // authorElement.innerText = "authorName";
-    
-        // var dateElement = document.getElementById("post-date");
-        // dateElement.textContent = postDate; 
-    
-        // var contentElement = document.getElementById("post-content");
-        // contentElement.innerHTML = postContent;
-      });
+    // fetch(`api.php?postId=${postId}`)
+    return;
+    fetch("api.php")
+    .then(response => response.json())
+    .then(posts => {
+      posts.forEach(post => {
+        if (post.id === postId) {
+          // const authorElement = document.getElementById("post-author-name");
+          // console.log(authorElement.textContent);
+          // // authorElement.textContent = post.authorName;
+          // const dateElement = document.getElementById("post-date");
+          // dateElement.textContent = post.postDate;
+          // const contentElement = document.getElementById("post-content");
+          // contentElement.innerHTML = post.content;
+        }
+      })
+    });
 }
 
 function displayPost(postId) {
@@ -74,17 +79,86 @@ document.addEventListener("DOMContentLoaded", function () {
         postElement.addEventListener("click", function () {
           viewPost(post.id, post.author_username, post.content, post.postDate);
         });
+        let profilePictureSrc = "profile.png";
+        if (post.author_username === "Munguntulga Purevsuren") {
+          profilePictureSrc = "profile_1.png";
+        }
+        else if (post.author_username === "Biligt Gursed") {
+          profilePictureSrc = "profile_3.png";
+        }
+        else {
+          profilePictureSrc = "profil_2.png";
+        }
         postElement.innerHTML = `
+        <div class="author-info">
+        <img src=${profilePictureSrc} alt="Profile Picture" class="profile-picture2">
+        <span><a href="profile.html" style="color: blue; text-decoration: none;">${post.author_username}</a></span>
+        </div>
           <h3>${post.title}</h3>
           <p>${post.content.length > 500 ? post.content.substring(0, 500) + "... <a href='#' onclick='extendContent(event)'>Read more</a>" : post.content}</p>
-          <span>Author: ${post.author_username}</span>
+          <div class="post-footer">
+      <div class="actions">
+        <button>Like</button>
+        <button>Comment</button>
+        <button>Share</button>
+        <a class="toDownload" href="download.pdf" download="downloaded_file_name.pdf">Download</a>
+      </div>
+    </div>
         `;
         feed.appendChild(postElement);
       });
     });
 });
-function addPage()
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("api.php")
+    .then(response => response.json())
+    .then(posts => {
+      const feed = document.querySelector(".feed_profile");
+      posts.forEach(post => {
+        const postElement = document.createElement("div");
+        postElement.classList.add("post");
+        postElement.addEventListener("click", function () {
+          viewPost(post.id, post.author_username, post.content, post.postDate);
+        });
+        let profilePictureSrc = "profile.png";
+        if (post.author_username === "Munguntulga Purevsuren") {
+          profilePictureSrc = "profile_1.png";
+          postElement.innerHTML = `
+        <div class="author-info">
+        <img src=${profilePictureSrc} alt="Profile Picture" class="profile-picture2">
+        <span><a href="profile.html" style="color: blue; text-decoration: none;">${post.author_username}</a></span>
+        </div>
+          <h3>${post.title}</h3>
+          <p>${post.content.length > 500 ? post.content.substring(0, 500) + "... <a href='#' onclick='extendContent(event)'>Read more</a>" : post.content}</p>
+          <div class="post-footer">
+      <div class="actions">
+        <button>Like</button>
+        <button>Comment</button>
+        <button>Share</button>
+        <a class="toDownload" href="download.pdf" download="downloaded_file_name.pdf">Download</a>
+      </div>
+    </div>
+        `;
+          feed.appendChild(postElement);
+        }
+
+      });
+    });
+});
+function addPage() {
+  window.location.href = "addPage.html";
+}
+function downloadFile(url) {
+  // Create a temporary anchor element
+  var a = document.createElement('a');
+  a.style.display = 'none';
+  a.href = url;
+  a.download = url.split('/').pop(); // Set the download attribute to the file name
+  document.body.appendChild(a);
+  a.click(); // Simulate a click to trigger the download
+  document.body.removeChild(a); // Clean up the anchor element
+}
+function redirectToNewPage()
 {
   window.location.href = "addPage.html";
 }
-

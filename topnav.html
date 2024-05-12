@@ -3,8 +3,8 @@
     <a href="index.php">Home</a>
     <a href="#research-paper">Research-papers</a>
     <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
+        <form action="/action_page.php" method="GET">
+            <input type="text" placeholder="Search.." name="keywords">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
@@ -14,9 +14,4 @@
         <a href="profile.html"><i class="fa fa-user"></i></a>
         <button class="addButton" onclick="redirectToNewPage()">Add</button>
     </div>
-    <script>
-        function redirectToNewPage() {
-            window.location.href = "newpage.html";
-        }
-    </script>
 </div>

@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    
+    <div id="topnav-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const topnavPlaceholder = document.getElementById("topnav-placeholder");
+            fetch("topnav.html")
+                .then(response => response.text())
+                .then(html => {
+                    topnavPlaceholder.innerHTML = html;
+                });
+        });
+    </script>
+    <div class="test">
+        <form id="myForm">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" style="width: 100%;"><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" style="width: 100%; height: 200px;"></textarea><br>
+            <label for="file">Upload File:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+            <input type="submit" value="Submit" style="width: 100%;">
+        </form>
+    </div>
+    </div>
 </body>
 </html>
