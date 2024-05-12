@@ -65,8 +65,9 @@ body {
   color: black;
   font-size: 25px; /* Adjust the font size of the icons */
 }
-.icons button{
-    margin-left: 30px;
+.addButton
+{
+  margin-left: 30px;
   padding: 8px 30px;
   background-color: #9a9c9e; /* Blue background color */
   color: rgb(255, 255, 255);
